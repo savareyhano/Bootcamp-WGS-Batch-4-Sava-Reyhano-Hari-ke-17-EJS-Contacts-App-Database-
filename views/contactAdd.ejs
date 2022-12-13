@@ -1,0 +1,28 @@
+<%- contentFor('Content') %>
+<h1>Add new contact form</h1>
+<% if(typeof errors != 'undefined') { %>
+  <div class="alert alert-danger" role="alert">
+    <ul>
+      <% errors.forEach(error => { %> 
+        <li>
+          <%= error.msg %> 
+        </li>
+      <% }) %> 
+    </ul>
+  </div>
+<% } %> 
+<form action="/create" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input name="name" class="form-control" required />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input name="email" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Mobile Phone</label>
+    <input name="phone" class="form-control" required />
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Add Contact Data</button>
+</form>

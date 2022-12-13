@@ -1,0 +1,15 @@
+<%- contentFor('Content') %>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= cont.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= cont.email %></h6>
+      <p class="card-text"><%= cont.phone %></p>
+      <form action="/delete/<%= cont.name %>" method="get">
+        <button type="submit" onclick="return confirm('Yakin ingin menghapus data dari <%= cont.name %>?')" class="btn btn-primary mb-2">Delete</button>
+      </form>
+      <form action="/update/<%= cont.name %>" method="get">
+        <button type="submit" class="btn btn-primary mb-2">Update</button>
+      </form>
+    </div>
+</div>
